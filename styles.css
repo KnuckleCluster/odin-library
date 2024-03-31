@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+}
+
+body {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background-image: url('/img/bglib.jpg');
+    background-size: cover;
+}
+
+main{
+    background-color: rgba(30, 30, 41, 0.805);
+    width: 80vw;
+    height: 95vh;
+    border: none;
+    font-family: monospace;
+    color: white;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+    border-radius: 20px;
+    
+}
+
+.modal{
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+}
+
+.modal-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.modalinput{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 200px;
+    gap: 10px
+}
+
+.modal button{
+    margin-top: 20px;
+    color: white;
+    width: 50px;
+    background-color: rgb(81, 190, 81);
+}
+
+.modal button:hover{
+    background-color: rgb(23, 96, 23);
+}
+
+
+
+main > .title{
+    height: 20%;
+    width: 80%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border-bottom: solid;
+}
+
+.title button{
+    width: 80px;
+    margin-top: 10px;
+    background-color: rgb(85, 197, 85);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+}
+.title button:hover{
+    background-color: rgb(23, 87, 23);
+}
+
+
+main > .book-container {
+    width: 80%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, clamp(150px, 200px, 300px) );
+    justify-content: center;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+
+.book-card {
+    border: solid;
+    width: 200px;
+    max-height: 250px; /* Set height to automatically adjust to content */
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+}
+
+.card-deets{
+    display: flex;
+    gap: 5px;
+}
+
+
+.card-title, .card-deets, .card-status, .card-pages{
+    margin-left: 20px;
+}
+
+.book-container button{
+    width: 100px;
+    height: 25px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background-color: rgb(201, 103, 103);
+}
+.book-container button:hover{
+    background-color: rgb(126, 45, 45);
+}
+
+.btn-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

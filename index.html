@@ -8,8 +8,59 @@
 </head>
 <body>
 
+    <!-- dialog box for adding new book -->
+    <dialog  class="modal" id="modal">
+        <div class="modal-content">
+            <h3>Good day! What book should we add?</h3>
+            <div class="modalinput">
+                <label for="book-title">Title: <input class="title" type="text"></label>
+                <label for="book-author">Author: <input class="author" type="text"></label>
+                <label for="book-year">Year Published: <input class="year" type="number"></label>
+                <label for="book-pages">Pages: <input class="pages" type="number"></label>
+                <label for="status">Done reading?<input class="status" type="checkbox"></label>
+            </div>
+            <div class="modalbtn">
+                <button id="add-book">Add</button>
+                <button id="close-modal">Close</button>
+            </div>
+        </div>
+    </dialog>
 
 
+
+
+
+    <!-- this is where the base site is (below the dialog when it shows up) -->
+    <main>
+        <div class="title">
+            <h1>Welcome to the library</h3>
+
+            <button class="open-modal">Add book</button>
+
+        </div>
+
+        <section class="book-container">
+            <!-- <div class="book-card">
+                <h2 class="card-title">go flex</h2>
+                <div class="card-deets">
+                <p><i>Post Malone</i>,</p>
+                <p>2016</p>
+                </div>
+                <p class="card-pages">1000 pages</p>
+                <label class="card-status"> Done reading? <input class="status-tick" type="checkbox"></label>
+                <div class="btn-cont">
+                    <button><strong>delete book</strong></button>
+                </div>
+                
+            </div> -->
+
+
+        </section>
+
+
+    
+
+    </main>
 
     <script src="app.js"></script>
 </body>
