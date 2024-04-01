@@ -145,3 +145,8 @@ main > .book-container {
     justify-content: center;
     align-items: center;
 }
+
+
+.done-reading {
+    background-color: lightgreen;
+}

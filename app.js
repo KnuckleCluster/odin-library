@@ -5,7 +5,9 @@ const addBookButton = document.querySelector('#add-book');
 const bookListContainer = document.querySelector('.book-container');
 const bookform = document.querySelector('.modalinput');
 
-const myLibrary = [];
+let myLibrary = [];
+
+
 
 function Book(title, author, year, pages, doneReading) {
     this.id = myLibrary.length + 1;
@@ -34,12 +36,8 @@ function createBookFromInput() {
 }
 
 function deleteBookById(bookId) {
-    const index = myLibrary.findIndex(book => book.id === bookId);
-    if (index !== -1) {
-        myLibrary.splice(index, 1);
-        // Update the book list UI after deletion
-        updateBookListUI();
-    }
+    myLibrary = myLibrary.filter(book => book.id !== bookId);
+    updateBookListUI();
 }
 
 function updateBookListUI() {
@@ -47,6 +45,10 @@ function updateBookListUI() {
     myLibrary.forEach(book => {
         const bookItem = document.createElement('div');
         bookItem.classList.add('book-card');
+
+        if (book.doneReading) {
+            bookItem.classList.add('done-reading');
+        }
 
         const titleElement = document.createElement('h2');
         titleElement.classList.add('card-title');
@@ -62,7 +64,16 @@ function updateBookListUI() {
 
         const statusElement = document.createElement('label');
         statusElement.classList.add('card-status');
-        statusElement.innerHTML = `Done reading? <input class="status-tick" type="checkbox" ${book.doneReading ? 'checked' : ''}>`;
+        const checkbox = document.createElement('input');
+        checkbox.classList.add('status-tick');
+        checkbox.type = 'checkbox';
+        checkbox.checked = book.doneReading;
+        checkbox.addEventListener('change', () => {
+            book.doneReading = checkbox.checked;
+            updateBookListUI(); // Update UI when checkbox status changes
+        });
+        statusElement.appendChild(document.createTextNode('Done reading? '));
+        statusElement.appendChild(checkbox);
 
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'Delete';
@@ -89,13 +100,11 @@ openModal.addEventListener('click', () => {
 });
 
 closeModal.addEventListener('click', () => {
-    
     modal.close();
     bookform.reset();
 });
 
 addBookButton.addEventListener('click', () => {
-    
     createBookFromInput();
     bookform.reset();
 });
