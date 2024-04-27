@@ -150,3 +150,32 @@ main > .book-container {
 .done-reading {
     background-color: lightgreen;
 }
+
+
+footer{
+    
+    position: relative;
+    text-align: center;
+    color: white;
+    background-image: url('/imgs/posty-footer.png');
+    background-size: cover;
+    background-position: center center;
+    padding: 50px;
+
+}
+
+
+.footertext {
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+
+.footerimg{
+width: 50px;
+height: 50px;
+filter: invert(100%);
+}
